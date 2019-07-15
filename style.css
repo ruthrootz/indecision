@@ -31,7 +31,7 @@ input[type='number'] {
 
 button {
     padding: 1%;
-    width: 15rem;
+    width: 100%;
     margin: 1.5rem;
     background-color: #801B14 !important;
     color: white !important;
