@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src='https://cdn.rawgit.com/BrainJS/brain.js/5797b875/browser.js'></script>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+        <script src='hangout_recommendation.js'></script>
+        <link rel='stylesheet' href='style.css' />
+        <link rel='shortcut icon' type='image/png' href='favicon.png' />
+        <title>INDECISION</title>
+    </head>
+    <body>
+        <div class='container rounded'>
+            <h1>INDECISION</h1>
+            <div class='row'>
+                <div class='col-lg-6 col-md-12'>
+                    <label><input type='checkbox' id='food' />food?</label>
+                    <label><input type='checkbox' id='coffee' />coffee?</label>
+                    <label><input type='checkbox' id='ice_cream' />ice cream?</label>
+                    <label><input type='checkbox' id='weird_group' />weird group?</label>
+                </div>
+                <div class='col-lg-6 col-md-12'>
+                    <input type='number' id='people' class='form-control' min='0' max='20' step='1' pattern='^[0-9]' placeholder='number of people (up to 20)'/>
+                    <input type='number' id='hours' class='form-control' min='0' max='3' step='0.1' pattern='^[0-9]' placeholder='number of hours (up to 3)'/>
+                </div>
+            </div>
+            <button id='pick' class='btn'>PICK</button>
+            <h2 id='result'></h2>
+            <div id='error' class="alert alert-danger">
+                <strong>ERROR: invalid inputs.</strong>
+            </div>
+        </div>
+        
+    </body>
+</html>
