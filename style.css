@@ -12,6 +12,7 @@ body {
 h1 {
     margin: 5%;
     text-align: center;
+    font-size: 5rem;
 }
 
 label {
@@ -29,6 +30,8 @@ input[type='number'] {
 button {
     padding: 10%;
     width: 100%;
+    height: 5rem;
+    font-size: 2.75rem !important;
     background-color: #801B14 !important;
     color: white !important;
 }
@@ -39,4 +42,21 @@ button {
 
 #error {
     display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    body {
+        font-size: 3rem;
+    }
+
+    button {
+        height: 5rem;
+        font-size: 2.75rem !important;
+    }
+
+    input {
+        height: 5rem;
+    }
+
 }
