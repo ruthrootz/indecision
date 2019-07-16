@@ -64,6 +64,12 @@ a:active {
 
 #error {
     display: none;
+    margin-top: 5%;
+}
+
+#success {
+    display: none;
+    margin-top: 5%;
 }
 
 @media only screen and (max-width: 1000px) {

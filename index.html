@@ -6,6 +6,7 @@
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
         <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+        <script src='data.js'></script>
         <script src='hangout_recommendation.js'></script>
         <link rel='stylesheet' href='style.css' />
         <link rel='shortcut icon' type='image/png' href='favicon.png' />
@@ -25,9 +26,9 @@
                     <input type='number' id='hours' class='form-control form-control-lg' min='0' max='3' step='0.1' pattern='^[0-9]' placeholder='number of hours (up to 3)'/>
                 </div>
             </div>
-            <button id='pick' class='btn'>PICK</button>
             <h2 id='result'></h2>
-            <div id='error' class="alert alert-danger">
+            <button id='pick' class='btn'>PICK</button>
+            <div id='error' class='alert alert-danger'>
                 <strong>ERROR: invalid inputs.</strong>
             </div>
             <button id='login' class='btn'>LOGIN</button>
