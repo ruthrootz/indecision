@@ -2,20 +2,22 @@
 
 $(() => {
 
-    let listOfPlaces = {
-        "the mall" : 1,
-        "book store" : 1,
-        "Welch's" : 1,
-        "Rizzi's" : 1,
-        "Applebee's" : 1,
-        "New Era" : 1,
-        "Chipotle" : 1,
-        "Strickland" : 1,
-        "Steak N Shake" : 1,
-        "McDonald's" : 1,
-        "Nervous Dog" : 1,
-        "Cafe Arnone" : 1,
-    }
+    let listOfPlaces = [
+        "the mall",
+        "book store",
+        "Welch's",
+        "Rizzi's",
+        "Applebee's",
+        "New Era",
+        "Chipotle",
+        "Strickland",
+        "Steak N Shake",
+        "McDonald's",
+        "Nervous Dog",
+        "Cafe Arnone",
+        "Five Guys",
+        "Shake Shack",
+    ];
     
     function normalizeHours(hours) {
         return hours / 180;
@@ -40,7 +42,6 @@ $(() => {
             food : 0,
             coffee : 1,
             iceCream : 1,
-            weirdGroup : 0,
         }, output : { "Strickland's" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(10),
@@ -48,7 +49,6 @@ $(() => {
             food : 1,
             coffee : 1,
             iceCream : 1,
-            weirdGroup : 0,
         }, output : { "McDonald's" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(4),
@@ -56,7 +56,6 @@ $(() => {
             food : 0,
             coffee : 1,
             iceCream : 0,
-            weirdGroup : 0,
         }, output : { "Nervous Dog" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(12),
@@ -64,7 +63,6 @@ $(() => {
             food : 1,
             coffee : 0,
             iceCream : 1,
-            weirdGroup : 0,
         }, output : { "Steak N Shake" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(5),
@@ -72,7 +70,6 @@ $(() => {
             food : 0,
             coffee : 1,
             iceCream : 1,
-            weirdGroup : 1,
         }, output : { "Cafe Arnone" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(7),
@@ -80,7 +77,6 @@ $(() => {
             food : 1,
             coffee : 0,
             iceCream : 0,
-            weirdGroup : 1,
         }, output : { "Chipotle" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(13),
@@ -88,7 +84,6 @@ $(() => {
             food : 1,
             coffee : 1,
             iceCream : 1,
-            weirdGroup : 1,
         }, output : { "New Era" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(17),
@@ -96,7 +91,6 @@ $(() => {
             food : 1,
             coffee : 0,
             iceCream : 1,
-            weirdGroup : 0,
         }, output : { "Applebee's" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(20),
@@ -104,7 +98,6 @@ $(() => {
             food : 1,
             coffee : 0,
             iceCream : 1,
-            weirdGroup : 0,
         }, output : { "Rizzi's" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(15),
@@ -112,7 +105,6 @@ $(() => {
             food : 0,
             coffee : 0,
             iceCream : 1,
-            weirdGroup : 1,
         }, output : { "Welch's" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(4),
@@ -120,7 +112,6 @@ $(() => {
             food : 0,
             coffee : 1,
             iceCream : 0,
-            weirdGroup : 0,
         }, output : { "book store" : 1 } },
         { input : {
             numberOfPeople : normalizePeople(10),
@@ -128,27 +119,73 @@ $(() => {
             food : 1,
             coffee : 1,
             iceCream : 1,
-            weirdGroup : 1,
         }, output : { "the mall" : 1 } },
+        { input : {
+            numberOfPeople : normalizePeople(7),
+            amountOfTime : normalizeHours(1.5),
+            food : 1,
+            coffee : 0,
+            iceCream : 0,
+        }, output : { "Five Guys" : 1 } },
+        { input : {
+            numberOfPeople : normalizePeople(5),
+            amountOfTime : normalizeHours(2),
+            food : 1,
+            coffee : 0,
+            iceCream : 0,
+        }, output : { "Five Guys" : 1 } },
+        { input : {
+            numberOfPeople : normalizePeople(4),
+            amountOfTime : normalizeHours(2),
+            food : 1,
+            coffee : 1,
+            iceCream : 1,
+        }, output : { "the mall" : 1 } },
+        { input : {
+            numberOfPeople : normalizePeople(7),
+            amountOfTime : normalizeHours(3),
+            food : 1,
+            coffee : 0,
+            iceCream : 1,
+        }, output : { "Shake Shack" : 1 } },
+        { input : {
+            numberOfPeople : normalizePeople(12),
+            amountOfTime : normalizeHours(3),
+            food : 1,
+            coffee : 0,
+            iceCream : 0,
+        }, output : { "Chipotle" : 1 } },
+        { input : {
+            numberOfPeople : normalizePeople(9),
+            amountOfTime : normalizeHours(1.5),
+            food : 0,
+            coffee : 1,
+            iceCream : 0,
+        }, output : { "book store" : 1 } },
+        { input : {
+            numberOfPeople : normalizePeople(10),
+            amountOfTime : normalizeHours(3),
+            food : 1,
+            coffee : 1,
+            iceCream : 1,
+        }, output : { "New Era" : 1 } },
         // ADD MORE TEST DATA
     ];
     
     const net = new brain.NeuralNetwork({ hiddenLayers : [3, 3] });console.log(net.train(trainingData));
     
-    function pickPlace(numberOfPeople, amountOfTime, food, coffee, iceCream, weirdGroup) {
+    function pickPlace(numberOfPeople, amountOfTime, food, coffee, iceCream) {
         numberOfPeople = normalizePeople(numberOfPeople);
         amountOfTime = normalizeHours(amountOfTime);
         food = food ? 1 : 0;
         coffee = coffee ? 1 : 0;
         iceCream = iceCream ? 1 : 0;
-        weirdGroup = weirdGroup ? 1 : 0;
         let results = net.run({
             numberOfPeople,
             amountOfTime,
             food,
             coffee, 
             iceCream,
-            weirdGroup,
         });
         console.log({
             numberOfPeople,
@@ -156,7 +193,6 @@ $(() => {
             food,
             coffee, 
             iceCream,
-            weirdGroup,
         });
         console.log(results);
         return resultsToPlaceName(results);
@@ -188,9 +224,8 @@ $(() => {
         let food = $('#food').is(':checked') ? true : false;
         let coffee = $('#coffee').is(':checked') ? true : false;
         let iceCream = $('#ice_cream').is(':checked') ? true : false;
-        let weirdGroup = $('#weird_group').is(':checked') ? true : false;
         if (numberOfPeople > 0 && numberOfPeople <= 20 && amountOfTime > 0 && amountOfTime <= 3) {
-            let result = pickPlace(numberOfPeople, amountOfTime, food, coffee, iceCream, weirdGroup);
+            let result = pickPlace(numberOfPeople, amountOfTime, food, coffee, iceCream);
             $('#result').html(result);
             clearForm();
         }
@@ -200,4 +235,5 @@ $(() => {
     }
 
     $('#pick').click(main);
+    
 });
