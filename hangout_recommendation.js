@@ -35,7 +35,7 @@ $(() => {
         return people * 20;
     }
     
-    let trainingData = [
+    /* export */ let trainingData = [
         { input : {
             numberOfPeople : normalizePeople(6),
             amountOfTime : normalizeHours(2),
@@ -235,5 +235,5 @@ $(() => {
     }
 
     $('#pick').click(main);
-    
+
 });
