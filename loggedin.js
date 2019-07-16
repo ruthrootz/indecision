@@ -1,6 +1,6 @@
 'use strict';
 
-import trainingData from './hangout_recommendation';
+// import trainingData from './hangout_recommendation';
 
 $(() => {
 

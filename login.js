@@ -10,7 +10,7 @@ $(() => {
 
     function login(username, password) {
         if (username === 'ruthisthegreatest' && password === 'password123') {
-            window.open('./loggedin.html');
+            window.location.href = 'loggedin.html';
         }
     }
 
