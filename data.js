@@ -22,7 +22,7 @@ let listOfPlaces = [
     "Applebee's",
     "New Era",
     "Chipotle",
-    "Strickland",
+    "Strickland's",
     "Steak N Shake",
     "McDonald's",
     "Nervous Dog",
