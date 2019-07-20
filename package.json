@@ -1,0 +1,22 @@
+{
+  "name": "indecision",
+  "version": "1.0.0",
+  "description": "Hang out recommendation engine running on brain.js by Ruth Oldja.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruthrootz/indecision.git"
+  },
+  "author": "Ruth R. Oldja (ruthrootz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruthrootz/indecision/issues"
+  },
+  "homepage": "https://github.com/ruthrootz/indecision#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
