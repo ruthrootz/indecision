@@ -164,6 +164,5 @@ let trainingData = [
         food : 1,
         coffee : 1,
         iceCream : 1,
-    }, output : { "New Era" : 1 } },
-    // ADD MORE TEST DATA
+    }, output : { "New Era" : 1 } }
 ];

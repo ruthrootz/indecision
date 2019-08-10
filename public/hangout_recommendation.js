@@ -2,6 +2,8 @@
 
 $(() => {
 
+    // have it train on data from trainingData.db
+    // normalize number of people and number of hours
     const net = new brain.NeuralNetwork({ hiddenLayers : [3, 3] });console.log(net.train(trainingData));
     
     function pickPlace(numberOfPeople, amountOfTime, food, coffee, iceCream) {

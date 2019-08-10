@@ -8,16 +8,8 @@ $(() => {
         let iceCream = $('#ice_cream').is(':checked') ? 1 : 0;
         let place = $('option').attr('selected', true).val();
         if (numberOfPeople > 0 && numberOfPeople <= 20 && amountOfTime > 0 && amountOfTime <= 3 && place != undefined) {
-            trainingData.push({
-            input : {
-                numberOfPeople : normalizePeople(numberOfPeople),
-                amountOfTime : normalizeHours(amountOfTime),
-                food : food,
-                coffee : coffee,
-                iceCream : iceCream,
-            },
-            output : { [place] : 1 } });
-            console.log(trainingData);
+            // this is where I need to insert the validated data into trainingData.db
+            
             alert('Sucess!');
             clearForm();
         }
