@@ -11,7 +11,6 @@ database.loadDatabase();
 app.post('/data', (request, response) => {
     const data = request.body;
     database.insert(data);
-    console.log(database);
     response.json({
         status : 'success',
         data : request.body,
