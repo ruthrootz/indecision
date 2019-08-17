@@ -1,43 +1,51 @@
 $(() => {
 
-    $('#submit').click(function() {
+    let submitButton = document.getElementById('submit');
+    submitButton.addEventListener('click', () => {
         let numberOfPeople = $('#people').val();
         let amountOfTime = $('#hours').val();
         let food = $('#food').is(':checked') ? 1 : 0;
         let coffee = $('#coffee').is(':checked') ? 1 : 0;
         let iceCream = $('#ice_cream').is(':checked') ? 1 : 0;
-        let place = $('option').attr('selected', true).val();
+        let place = $('option:selected').val();
+        console.log(place);
         if (numberOfPeople > 0 && numberOfPeople <= 20 && amountOfTime > 0 && amountOfTime <= 3 && place != undefined) {
-            // normalize the people and hours numbers
-            // insert the validated data into trainingData.db via /data
-            // FROM CODING TRAIN'S VIDEO:
-            // button.addEventListener('click', async event => {
-            //     const mood = document.getElementById('mood').value;
-            //     video.loadPixels();
-            //     const image64 = video.canvas.toDataURL();
-            //     const data = { lat, lon, mood, image64 };
-            //     const options = {
-            //       method: 'POST',
-            //       headers: {
-            //         'Content-Type': 'application/json'
-            //       },
-            //       body: JSON.stringify(data)
-            //     };
-            //     const response = await fetch('/api', options);
-            //     const json = await response.json();
-            //     console.log(json);
-            //   });
-            clearForm();
+            let data = {
+                'input' : {
+                    'numberOfPeople' : Number(numberOfPeople),
+                    'amountOfTime' : Number(amountOfTime),
+                    'food' : food,
+                    'coffee' : coffee,
+                    'iceCream' : iceCream 
+                },
+                'output' : { }
+            };
+            data.output[place] = 1;
+            let options = {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            postData(options).then(clearForm());
         }
         else {
             $('#error').css('display', 'block');
         }
     });
 
+    async function postData(options) {
+        const response = await fetch('/data', options);
+        const json = await response.json();
+        console.log(json);
+    }
+
     function clearForm() {
         $('#people').val('');
         $('#hours').val('');
         $('input[type="checkbox"').prop('checked', false);
+        $('#error').css('display', 'none');
     }
 
 });

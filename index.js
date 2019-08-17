@@ -18,6 +18,6 @@ app.post('/data', (request, response) => {
 });
 
 // + serve web pages
-// - create a database and post data to it from loggedin.js
+// + create a database and post data to it from loggedin.js
 // - train the net from the data in trainingData.db
 // - save admin login in another database that doesn't get posted to

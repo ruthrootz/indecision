@@ -1,9 +1,8 @@
-{"some":"data","_id":"4pdRAhknfm18H8pO"}
 {"input":{"numberOfPeople":4,"amountOfTime":2,"food":0,"coffee":1,"iceCream":0},"output":{"Nervous Dog":1},"_id":"4qmCUI2B4DsRFiVt"}
 {"input":{"numberOfPeople":10,"amountOfTime":1,"food":1,"coffee":1,"iceCream":1},"output":{"McDonald's":1},"_id":"6D2lhRCM1gozWjhZ"}
+{"input":{"numberOfPeople":2,"amountOfTime":2,"food":0,"coffee":1,"iceCream":0},"output":{"Nervous Dog":1},"_id":"6frsrmcFadykHWB0"}
 {"input":{"numberOfPeople":5,"amountOfTime":2,"food":0,"coffee":1,"iceCream":1},"output":{"Cafe Arnone":1},"_id":"CiylbMQBarh1jCpy"}
 {"input":{"numberOfPeople":7,"amountOfTime":3,"food":1,"coffee":0,"iceCream":1},"output":{"Shake Shack":1},"_id":"HOheYm7ePwKW3yLB"}
-{"some":"data","_id":"JeH55RMTWPZoauVt"}
 {"input":{"numberOfPeople":15,"amountOfTime":1.5,"food":0,"coffee":0,"iceCream":1},"output":{"Welch's":1},"_id":"SNzTwsAqF1Ffm8R4"}
 {"input":{"numberOfPeople":5,"amountOfTime":2,"food":1,"coffee":0,"iceCream":0},"output":{"Five Guys":1},"_id":"WhYh9CsZGb2TujvR"}
 {"input":{"numberOfPeople":4,"amountOfTime":1.75,"food":0,"coffee":1,"iceCream":0},"output":{"book store":1},"_id":"aUJ4MDupSmCSSNo6"}
@@ -15,9 +14,9 @@
 {"input":{"numberOfPeople":6,"amountOfTime":2,"food":0,"coffee":1,"iceCream":1},"output":{"Strickland's":1},"_id":"mLUkJFedWllViGXH"}
 {"input":{"numberOfPeople":10,"amountOfTime":2.75,"food":1,"coffee":1,"iceCream":1},"output":{"the mall":1},"_id":"ruk1TqHkuwWCvtiK"}
 {"input":{"numberOfPeople":20,"amountOfTime":2,"food":1,"coffee":0,"iceCream":1},"output":{"Rizzi's":1},"_id":"t8Vu06uAHUkkxJyx"}
-{"some":"data","_id":"tfuLLMGcIgbG4HWq"}
 {"input":{"numberOfPeople":4,"amountOfTime":2,"food":1,"coffee":1,"iceCream":1},"output":{"the mall":1},"_id":"tmKXqyUwIpihzQp5"}
 {"input":{"numberOfPeople":12,"amountOfTime":3,"food":1,"coffee":0,"iceCream":0},"output":{"Chipotle":1},"_id":"uxjbhaV9LhnviuIp"}
 {"input":{"numberOfPeople":7,"amountOfTime":1.5,"food":1,"coffee":0,"iceCream":0},"output":{"Five Guys":1},"_id":"xuNZrlnNA6CYVKYO"}
 {"input":{"numberOfPeople":9,"amountOfTime":1.5,"food":0,"coffee":1,"iceCream":0},"output":{"book store":1},"_id":"yEm65vfBMeNv3wx4"}
 {"input":{"numberOfPeople":17,"amountOfTime":2.5,"food":1,"coffee":0,"iceCream":1},"output":{"Applebee's":1},"_id":"ykKLjhJLvcVbiQO8"}
+{"input":{"numberOfPeople":3,"amountOfTime":1,"food":1,"coffee":1,"iceCream":1},"output":{"McDonald's":1},"_id":"Z642xUOxKFz26ID5"}
