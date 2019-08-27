@@ -2,9 +2,18 @@
 
 $(() => {
 
-    // have it train on data from trainingData.db
-    // normalize number of people and number of hours
-    const net = new brain.NeuralNetwork({ hiddenLayers : [3, 3] });console.log(net.train(trainingData));
+    let trainingData;
+    let net;
+    getTrainingData();
+    async function getTrainingData(){
+        let response = await fetch('/data');
+        trainingData = await response.json();
+        trainingData.forEach((item, index) =>{
+            item.amountOfTime = normalizeHours(item.amountOfTime);
+            item.numberOfPeople = normalizePeople(item.numberOfPeople);
+        });
+        net = new brain.NeuralNetwork({ hiddenLayers : [3, 3] });console.log(net.train(trainingData));
+    }
     
     function pickPlace(numberOfPeople, amountOfTime, food, coffee, iceCream) {
         numberOfPeople = normalizePeople(numberOfPeople);

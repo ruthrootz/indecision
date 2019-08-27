@@ -8,6 +8,12 @@ app.use(express.json({ limit : '1mb' }));
 const database = new Datastore('trainingData.bd');
 database.loadDatabase();
 
+app.get('/data', (request, response) => {
+    database.find({}, (error, data) => {
+        response.json(data);
+    });
+});
+
 app.post('/data', (request, response) => {
     const data = request.body;
     database.insert(data);
