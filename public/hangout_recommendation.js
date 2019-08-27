@@ -8,7 +8,7 @@ $(() => {
     async function getTrainingData(){
         let response = await fetch('/data');
         trainingData = await response.json();
-        trainingData.forEach((item, index) =>{
+        trainingData.forEach((item, index) => {
             item.amountOfTime = normalizeHours(item.amountOfTime);
             item.numberOfPeople = normalizePeople(item.numberOfPeople);
         });
