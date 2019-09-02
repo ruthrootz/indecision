@@ -2,9 +2,8 @@ const express = require('express');
 const Datastore = require('nedb');
 const app = express();
 require('dotenv').config();
-console.log(process.env);
-
-app.listen(3000, () => console.log('listening'));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`listening at ${port}`));
 app.use(express.static('public'));
 app.use(express.json({ limit : '1mb' }));
 const database = new Datastore('trainingData.bd');
