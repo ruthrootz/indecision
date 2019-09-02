@@ -1,10 +1,12 @@
 const express = require('express');
 const Datastore = require('nedb');
 const app = express();
+require('dotenv').config();
+console.log(process.env);
+
 app.listen(3000, () => console.log('listening'));
 app.use(express.static('public'));
 app.use(express.json({ limit : '1mb' }));
-
 const database = new Datastore('trainingData.bd');
 database.loadDatabase();
 
@@ -27,3 +29,5 @@ app.post('/data', (request, response) => {
 // + create a database and post data to it from loggedin.js
 // + train the net from the data in trainingData.db
 // - save admin login in another database that doesn't get posted to
+
+// include variables for username and password in this file and import them into login script
