@@ -16,6 +16,11 @@ app.get('/data', (request, response) => {
     });
 });
 
+app.get('/login', (request, response) => {
+    const data = { username : 'ruthisthegreatest', password : 'password123' };
+    response.json(data);
+});
+
 app.post('/data', (request, response) => {
     const data = request.body;
     database.insert(data);
@@ -24,10 +29,3 @@ app.post('/data', (request, response) => {
         data : request.body,
     });
 });
-
-// + serve web pages
-// + create a database and post data to it from loggedin.js
-// + train the net from the data in trainingData.db
-// - save admin login in another database that doesn't get posted to
-
-// include variables for username and password in this file and import them into login script
